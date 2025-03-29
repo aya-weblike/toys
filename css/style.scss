@@ -1,0 +1,154 @@
+/*-------------------------------------------
+変数管理
+-------------------------------------------*/
+$color-white:#fff;
+$color-black:#555;
+$color-gray:#777;
+$color-title:#df70ba;
+
+/*-------------------------------------------
+メディアクエリ
+-------------------------------------------*/
+@mixin sp{
+	@media (max-width: 700px) {
+		@content;
+	}
+}
+
+/*-------------------------------------------
+共通部分
+-------------------------------------------*/
+html{
+    font-size: 100%;    
+}
+
+body{
+    color: $color-white;
+    font-family: 'Zen Maru Gothic', serif;
+    font-weight: 400;
+}
+
+.section_title{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 700;
+    font-size: 7rem;
+    color: $color-title;
+    margin-bottom: 2rem;
+	@include sp{
+		font-size: 4rem;
+	}
+}
+
+p{
+    line-height: 1.7;
+    font-size: 1.125rem;
+	@include sp{
+		font-size: 1rem;
+	}
+}
+
+.container{
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+}
+
+section{
+    height: 100vh;
+    scroll-snap-align: start;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+/*-------------------------------------------
+main_top
+-------------------------------------------*/
+.main_top{
+    background-image: url(../img/mv.jpg);
+    text-align: center;
+    padding-top: 10vh;
+	@include sp{
+		padding-top: 12vh;
+	}
+}
+
+.key_msg{
+    display: inline-block;
+    padding: 1rem;
+}
+
+/*-------------------------------------------
+products
+-------------------------------------------*/
+.products{
+    background-image: url(../img/products-bg.jpg);
+    display: flex;
+    align-items: center;
+}
+
+.wrap{
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.products_list{
+	tr{
+		font-size: 1.125rem;
+		margin-bottom: .5em;
+		line-height: 1.7;
+	}
+	th{
+		font-weight: normal;
+	}
+	td{
+		padding-left: 1rem;
+	}	
+}
+
+
+/*-------------------------------------------
+contact
+-------------------------------------------*/
+.contact{
+    background-image: url(../img/contact-bg.jpg);
+    text-align: center;
+    padding-top: 20vh;
+	p{
+		color: $color-black;
+	}
+}
+
+.btn{
+    display: inline-block;
+    margin: 2rem 0 2.25rem;
+    padding: 1rem 3.5rem;
+    border-radius: 6px;
+    background: $color-black;
+    font-size: 1.5rem;
+    color: $color-white;
+	&:hover{
+		background: $color-gray;
+	}
+}   
+
+.contact_sns{
+    display: flex;
+    justify-content: center;
+	a{
+		display: inline-block;
+		width: 3.75rem;
+		height: 3.75rem;
+		margin: 0 .5rem;
+		padding: .75rem 0 0 .125rem;
+		border-radius: 50%;
+		background: $color-white;
+		font-size: 2rem;
+		color: $color-black;
+		&:hover{
+			background: rgba(255,255,255,.5);
+		}
+	}
+}
